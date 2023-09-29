@@ -1,4 +1,4 @@
-<h1 align="center"> <img src="https://cdn.discordapp.com/attachments/1133245779352498217/1157148039438422076/instabot.png?ex=65178d97&is=65163c17&hm=38b8a3f000d41d39c7a06d30b041b3029ca16333572cb3eff62123d2be6b292c&" width="300px"></h1>
+<img align="center" src="https://cdn.discordapp.com/attachments/1133245779352498217/1157148039438422076/instabot.png?ex=65178d97&is=65163c17&hm=38b8a3f000d41d39c7a06d30b041b3029ca16333572cb3eff62123d2be6b292c&" width="500px">
 
 ### Como usar o InstaBot:
 
