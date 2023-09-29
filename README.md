@@ -1,4 +1,4 @@
-<img src="https://cdn.discordapp.com/attachments/1133245779352498217/1157148039438422076/instabot.png?ex=65178d97&is=65163c17&hm=38b8a3f000d41d39c7a06d30b041b3029ca16333572cb3eff62123d2be6b292c&" width="30px">
+<img src="https://cdn.discordapp.com/attachments/1133245779352498217/1157148039438422076/instabot.png?ex=65178d97&is=65163c17&hm=38b8a3f000d41d39c7a06d30b041b3029ca16333572cb3eff62123d2be6b292c&" width="100px">
 
 ### Como usar o InstaBot:
 
@@ -7,7 +7,11 @@ Antes de começar, certifique-se de que você tenha a versão mais recente do Te
 Certifique-se também de ter o Python instalado:
 
 ```shell
-pkg install pythonAgora, siga estas etapas para instalar o InstaBot diretamente do repositório:pkg install git
+pkg install python
+```
+Agora, siga estas etapas para instalar o InstaBot diretamente do repositório:
+```shell
+pkg install git
 cd /sdcard/
 git clone https://github.com/Ghostzinn07/instabot.git
 cd instabot
