@@ -1,4 +1,4 @@
-![Instabot](images/instabot.png)
+<h1 align="center">Olá! <img src="https://cdn.discordapp.com/attachments/1133245779352498217/1157148039438422076/instabot.png?ex=65178d97&is=65163c17&hm=38b8a3f000d41d39c7a06d30b041b3029ca16333572cb3eff62123d2be6b292c&" width="30px"></h1>
 
 ### Como usar o InstaBot:
 
@@ -19,6 +19,4 @@ Após concluir essas etapas, basta efetuar o login no InstaBot e você estará p
 
 ## Contato e Suporte:
 
-[![Instagram](https://static.vecteezy.com/system/resources/previews/020/009/601/original/email-and-mail-icon-black-free-png.png)](https://instagram.com/ghostzinn07)
-
-[![E-mail](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png)](mailto:ghostzinn07@hotmail.com)
+<a href="https://www.instagram.com/Ghostzinn07/"><img src="https://img.shields.io/badge/-Instagram-E4405F?style=flat-square&logo=instagram&logoColor=white&link=https://www.instagram.com/Ghostzinn07/"></a>
