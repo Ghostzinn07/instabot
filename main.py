@@ -15,20 +15,24 @@ def main():
         celebridades_file = './celebridades/celebridades.txt'
         celebridades = ler_celebridades(celebridades_file)
         random.shuffle(celebridades)
-        for index, username_to_follow in enumerate(celebridades):
-            seguir(api, username_to_follow, index)
-            time.sleep(70)
-            if (index + 1) % 10 == 0:
-                print_yellow('Aguardando 120 segundos após seguir 10...')
-                time.sleep(120)
-                api = Client(username, password)     
-        for index, username_to_unfollow in enumerate(celebridades):
-            parar_de_seguir(api, username_to_unfollow, index)
-            time.sleep(70)
-            if (index + 1) % 10 == 0:
-                print_yellow('Aguardando 120 segundos após parar de seguir 10...')
-                time.sleep(120)
-                api = Client(username, password)
+        
+        while True:
+            for index, username_to_follow in enumerate(celebridades):
+                seguir(api, username_to_follow, index)
+                time.sleep(10)
+                if (index + 1) % 10 == 0:
+                    print_yellow('Aguardando...')
+                    time.sleep(70)
+                    api = Client(username, password)     
+            
+            for index, username_to_unfollow in enumerate(celebridades):
+                parar_de_seguir(api, username_to_unfollow, index)
+                time.sleep(10)
+                if (index + 1) % 10 == 0:
+                    print_yellow('Aguardando...')
+                    time.sleep(70)
+                    api = Client(username, password)
+                    
     except Exception as e:
         print_red(f"Erro geral: {str(e)}")
 
