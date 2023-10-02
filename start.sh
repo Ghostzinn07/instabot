@@ -1,8 +1,5 @@
-while true; do
     clear
     echo "Bem-vindo ao instabot!"
-    echo "Use o comando: sh install.sh para baixar as dependências."
-    sleep 2
     echo "Escolha uma opção:"
     echo "1 - Ganhar seguidores."
     echo "2 - Comentar nas publicações das celebridades."
