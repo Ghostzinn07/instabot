@@ -1,27 +1,33 @@
-if ! pip show instagram_private_api &> /dev/null; then
-    echo "Instalando a dependência 'instagram_private_api'..."
-    pip install instagram_private_api
-else
-    echo "Verificando as dependências..."
-fi
+while true; do
+    clear
+    echo "Bem-vindo ao instabot!"
+    echo "Use o comando: sh install.sh para baixar as dependências."
+    sleep(2)
+    echo "Escolha uma opção:"
+    echo "1 - Ganhar seguidores."
+    echo "2 - Comentar nas publicações das celebridades."
+    echo "3 - Parar de seguir celebridades."
+    echo "4 - Sair."
 
-if ! pip show colorama &> /dev/null; then
-    echo "Instalando a dependência 'colorama'..."
-    pip install colorama
-else
-    echo "Verificando as dependências..."
-fi
+    read choice
 
-echo "Escolha uma opção:"
-echo "1 - Ganhar seguidores."
-echo "2 - Parar de seguir celebridades."
-
-read choice
-
-if [ $choice -eq 1 ]; then
-    python main.py
-elif [ $choice -eq 2 ]; then
-    python stop.py
-else
-    echo "Opção inválida."
-fi
+    case $choice in
+        1)
+            python3 main.py
+            ;;
+        2)
+            python3 comentar.py
+            ;;
+        3)
+            python3 stop.py
+            ;;
+        4)
+            echo "Saindo..."
+            exit 0
+            ;;
+        *)
+            echo "Opção inválida. Pressione Enter para tentar novamente."
+            read
+            ;;
+    esac
+done
