@@ -1,6 +1,5 @@
 from instagram_private_api import Client
 import time
-import random
 from colorama import Fore, Back, Style, init
 RED = "\033[91m"
 GREEN = "\033[92m"
@@ -48,3 +47,19 @@ def print_gradient_banner(filename):
             for color in gradient_colors:
                 print(color + line.strip())
                 time.sleep(0.05)
+                
+def comentar_postagem(api, username, comentario):
+    try:
+        user_id = api.username_info(username)["user"]["pk"]
+        timeline = api.user_feed(user_id)
+        latest_post = timeline.get("items", [])[0]
+
+        if latest_post:
+            media_id = latest_post["id"]
+            api.post_comment(media_id, comentario)
+            return True
+        else:
+            return False
+    except Exception as e:
+        print(f"Erro ao comentar no post de {username}: {str(e)}")
+        return False 
