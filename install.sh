@@ -14,4 +14,4 @@ clear
     else
         echo "Todas as bibliotecas estão atualizadas."
     fi
-    ;;
+sh start.sh
