@@ -1,10 +1,11 @@
 from src.utils import ler_celebridades, print_red, print_green, print_yellow, print_gradient_banner
+import instaloader
 from instagram_private_api import Client
 import time
 import random
 import os
 from colorama import Fore, Back, Style, init
-
+loader = instaloader.Instaloader()
 init(autoreset=True)
 
 def main():
@@ -25,11 +26,16 @@ def main():
         comentario3 = input("Digite a terceira mensagem que deseja comentar: ")
 
         postagens_comentadas = []
+        total_postagens_anterior = 0
 
         while True:
             user_info = api.username_info(perfil_alvo)
             user_id = user_info['user']['pk']
-
+            profile = instaloader.Profile.from_username(loader.context, perfil_alvo)
+            num_publicacoes = profile.mediacount
+            if num_publicacoes > total_postagens_anterior:
+            total_postagens_anterior = num_publicacoes
+            api = Client(username, password)
             if user_id:
                 num_posts = user_info['user']['media_count']
                 num_posts_to_check = min(5, num_posts)
