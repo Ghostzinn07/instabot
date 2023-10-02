@@ -5,8 +5,6 @@ import time
 import random
 import os
 from colorama import Fore, Back, Style, init
-
-loader = instaloader.Instaloader()
 init(autoreset=True)
 
 def main():
@@ -30,6 +28,7 @@ def main():
         total_postagens_anterior = 0
 
         while True:
+            loader = instaloader.Instaloader()
             profile = instaloader.Profile.from_username(loader.context, perfil_alvo)
             num_publicacoes = profile.mediacount
             if num_publicacoes > total_postagens_anterior:
@@ -60,11 +59,16 @@ def main():
                                     time.sleep(3)
                                 else:
                                     print_yellow(f"Não foi possível comentar no post de {perfil_alvo}")
-
-                    time.sleep(10)
+                        else:
+                            print_yellow(f"Nenhuma postagem recente encontrada para {perfil_alvo}")
+                    else:
+                        print_yellow(f"Nenhuma postagem disponível para {perfil_alvo}")
                 else:
                     print_red(f"Usuário {perfil_alvo} não encontrado")
-
+            else:
+                print_yellow(f"Nenhuma nova postagem para {perfil_alvo}. Aguardando novas postagens...")
+                total_postagens_anterior = num_publicacoes
+                time.sleep(120)
     except Exception as e:
         print_red(f"Erro geral: {str(e)}")
 
