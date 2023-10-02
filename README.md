@@ -15,7 +15,8 @@ pkg install git
 cd /sdcard/
 git clone https://github.com/Ghostzinn07/instabot.git
 cd instabot
-bash start.sh
+sh install.shsh start.sh
+
 ```
 
 Após concluir essas etapas, basta efetuar o login no InstaBot e você estará pronto para começar a usá-lo.
