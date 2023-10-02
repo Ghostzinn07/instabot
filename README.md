@@ -15,7 +15,8 @@ pkg install git
 cd /sdcard/
 git clone https://github.com/Ghostzinn07/instabot.git
 cd instabot
-sh install.shsh start.sh
+sh install.sh
+sh start.sh
 
 ```
 
