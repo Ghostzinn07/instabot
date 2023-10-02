@@ -2,12 +2,13 @@ while true; do
     clear
     echo "Bem-vindo ao instabot!"
     echo "Use o comando: sh install.sh para baixar as dependências."
-    sleep(2)
+    sleep 2
     echo "Escolha uma opção:"
     echo "1 - Ganhar seguidores."
     echo "2 - Comentar nas publicações das celebridades."
-    echo "3 - Parar de seguir celebridades."
-    echo "4 - Sair."
+    echo "3 - Comentar automaticamente."
+    echo "4 - Parar de seguir celebridades."
+    echo "5 - Sair."
 
     read choice
 
@@ -19,9 +20,12 @@ while true; do
             python3 comentar.py
             ;;
         3)
-            python3 stop.py
+            python3 automatic.py
             ;;
         4)
+            python3 stop.py
+            ;;
+        5)
             echo "Saindo..."
             exit 0
             ;;
