@@ -30,14 +30,12 @@ def main():
         total_postagens_anterior = 0
 
         while True:
-            user_info = api.username_info(perfil_alvo)
-            user_id = user_info['user']['pk']
             profile = instaloader.Profile.from_username(loader.context, perfil_alvo)
             num_publicacoes = profile.mediacount
-
             if num_publicacoes > total_postagens_anterior:
                 total_postagens_anterior = num_publicacoes
-
+                user_info = api.username_info(perfil_alvo)
+                user_id = user_info['user']['pk']
                 if user_id:
                     num_posts = user_info['user']['media_count']
                     num_posts_to_check = min(5, num_posts)
