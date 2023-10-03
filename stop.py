@@ -10,8 +10,14 @@ init(autoreset=True)
 def main():
     try:
         print_gradient_banner('./src/banner.txt')
-        username = input("Digite seu nome de usuário: ")
-        password = input("Digite sua senha: ")
+        if os.path.exists("./login/login.txt"):
+            with open("./login/login.txt", "r") as arquivo:
+                lines = arquivo.readlines()
+                username = lines[0].strip().split(": ")[1]
+                password = lines[1].strip().split(": ")[1]
+        else:
+            username = input("Digite seu nome de usuário: ")
+            password = input("Digite sua senha: ")
         api = Client(username, password)        
         celebridades_file = './celebridades/celebridades.txt'
         celebridades = ler_celebridades(celebridades_file)

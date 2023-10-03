@@ -10,8 +10,14 @@ init(autoreset=True)
 def main():
     try:
         print_gradient_banner('./src/banner.txt')
-        username = input("Digite seu nome de usuário: ")
-        password = input("Digite sua senha: ")
+        if os.path.exists("./login/login.txt"):
+            with open("./login/login.txt", "r") as arquivo:
+                lines = arquivo.readlines()
+                username = lines[0].strip().split(": ")[1]
+                password = lines[1].strip().split(": ")[1]
+        else:
+            username = input("Digite seu nome de usuário: ")
+            password = input("Digite sua senha: ")
 
         api = Client(username, password)
 
@@ -68,7 +74,7 @@ def main():
             else:
                 print_yellow(f"Nenhuma nova postagem para {perfil_alvo}. Aguardando novas postagens...")
                 total_postagens_anterior = num_publicacoes
-                time.sleep(120)
+                time.sleep(60)
     except Exception as e:
         print_red(f"Erro geral: {str(e)}")
 
