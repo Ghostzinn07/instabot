@@ -25,7 +25,7 @@ def main():
             
         for index, username_to_unfollow in enumerate(celebridades):
             parar_de_seguir(api, username_to_unfollow, index)
-            time.sleep(5)
+            time.sleep(50)
             if (index + 1) % 10 == 0:
                 print_yellow('Aguardando...')
                 time.sleep(100)

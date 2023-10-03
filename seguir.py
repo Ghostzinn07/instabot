@@ -32,7 +32,7 @@ def main():
                         break
                     
                     seguir(api, follower['username'], index)
-                    time.sleep(5)
+                    time.sleep(50)
                 
                 print_yellow('Aguardando 120 segundos...')
                 time.sleep(120)
@@ -47,13 +47,11 @@ def main():
                         break
                     
                     seguir(api, follower['username'], index)
-                    time.sleep(5)
+                    time.sleep(50)
                 
                 print_yellow('Aguardando 120 segundos...')
-                time.sleep(120)
+                time.sleep(320)
             
-            print_yellow('Aguardando 120 segundos antes de parar de seguir...')
-            time.sleep(120)
             
             api = Client(username, password)
             user_id = api.username_info(username)['user']['pk']
@@ -64,10 +62,10 @@ def main():
                     break
                 
                 parar_de_seguir(api, followed['username'], index)
-                time.sleep(3)
+                time.sleep(50)
             
             print_yellow('Aguardando 120 segundos antes de parar de seguir os restantes...')
-            time.sleep(120)
+            time.sleep(320)
             
             api = Client(username, password)
             user_id = api.username_info(username)['user']['pk']
