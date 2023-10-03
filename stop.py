@@ -25,10 +25,10 @@ def main():
             
         for index, username_to_unfollow in enumerate(celebridades):
             parar_de_seguir(api, username_to_unfollow, index)
-            time.sleep(3)
+            time.sleep(5)
             if (index + 1) % 10 == 0:
                 print_yellow('Aguardando...')
-                time.sleep(70)
+                time.sleep(100)
                 api = Client(username, password)
                     
     except Exception as e:
