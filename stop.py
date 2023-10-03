@@ -4,7 +4,12 @@ import time
 import random
 import os
 from colorama import Fore, Back, Style, init
-
+import json
+def ler_tempos():
+    with open("times.json", "r") as arquivo:
+        dados = json.load(arquivo)
+    return dados.get("long", 0), dados.get("fast", 0)
+time1, time2 = ler_tempos()
 init(autoreset=True)
 
 def main():
@@ -25,10 +30,10 @@ def main():
             
         for index, username_to_unfollow in enumerate(celebridades):
             parar_de_seguir(api, username_to_unfollow, index)
-            time.sleep(50)
+            time.sleep(time2)
             if (index + 1) % 10 == 0:
                 print_yellow('Aguardando...')
-                time.sleep(100)
+                time.sleep(time1)
                 api = Client(username, password)
                     
     except Exception as e:

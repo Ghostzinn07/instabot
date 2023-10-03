@@ -4,6 +4,12 @@ import time
 import random
 import os
 from colorama import Fore, Back, Style, init
+import json
+def ler_tempos():
+    with open("times.json", "r") as arquivo:
+        dados = json.load(arquivo)
+    return dados.get("long", 0), dados.get("fast", 0)
+time1, time2 = ler_tempos()
 init(autoreset=True)
 
 def main():
@@ -31,11 +37,11 @@ def main():
                 else:
                     print_yellow(f"Nenhuma postagem encontrada para {username_to_comment}")
 
-                time.sleep(20)
+                time.sleep(time2)
 
                 if (index + 1) % 4 == 0:
                     print_yellow('Aguardando...')
-                    time.sleep(120)
+                    time.sleep(time1)
                     api = Client(username, password)
 
     except Exception as e:

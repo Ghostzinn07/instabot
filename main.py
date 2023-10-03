@@ -3,9 +3,14 @@ from instagram_private_api import Client
 import time
 import random
 import os
+import json
 from colorama import Fore, Back, Style, init
 init(autoreset=True)
-
+def ler_tempos():
+    with open("times.json", "r") as arquivo:
+        dados = json.load(arquivo)
+    return dados.get("long", 0), dados.get("fast", 0)
+time1, time2 = ler_tempos()
 def main():
     try:
         print_gradient_banner('./src/banner.txt')
@@ -27,18 +32,18 @@ def main():
         while True:
             for index, username_to_follow in enumerate(celebridades):
                 seguir(api, username_to_follow, index)
-                time.sleep(30)
+                time.sleep(time2)
                 if (index + 1) % 10 == 0:
                     print_yellow('Aguardando...')
-                    time.sleep(200)
+                    time.sleep(time1)
                     api = Client(username, password)     
             
             for index, username_to_unfollow in enumerate(celebridades):
                 parar_de_seguir(api, username_to_unfollow, index)
-                time.sleep(30)
+                time.sleep(time2)
                 if (index + 1) % 10 == 0:
                     print_yellow('Aguardando...')
-                    time.sleep(200)
+                    time.sleep(time1)
                     api = Client(username, password)
                     
     except Exception as e:

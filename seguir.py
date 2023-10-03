@@ -3,7 +3,12 @@ from instagram_private_api import Client
 import time
 import os
 from colorama import init
-
+import json
+def ler_tempos():
+    with open("times.json", "r") as arquivo:
+        dados = json.load(arquivo)
+    return dados.get("long", 0), dados.get("fast", 0)
+time1, time2 = ler_tempos()
 init(autoreset=True)
 
 def main():
@@ -32,10 +37,10 @@ def main():
                         break
                     
                     seguir(api, follower['username'], index)
-                    time.sleep(50)
+                    time.sleep(time2)
                 
-                print_yellow('Aguardando 120 segundos...')
-                time.sleep(120)
+                print_yellow('Aguardando...')
+                time.sleep(time1)
             
             api = Client(username, password)
             for _ in range(10):
@@ -47,10 +52,10 @@ def main():
                         break
                     
                     seguir(api, follower['username'], index)
-                    time.sleep(50)
+                    time.sleep(time2)
                 
-                print_yellow('Aguardando 120 segundos...')
-                time.sleep(320)
+                print_yellow('Aguardando...')
+                time.sleep(time1)
             
             
             api = Client(username, password)
@@ -62,10 +67,10 @@ def main():
                     break
                 
                 parar_de_seguir(api, followed['username'], index)
-                time.sleep(50)
+                time.sleep(time2)
             
-            print_yellow('Aguardando 120 segundos antes de parar de seguir os restantes...')
-            time.sleep(320)
+            print_yellow('Aguardando...')
+            time.sleep(time1)
             
             api = Client(username, password)
             user_id = api.username_info(username)['user']['pk']
@@ -78,8 +83,8 @@ def main():
                 parar_de_seguir(api, followed['username'], index)
                 time.sleep(3)
             
-            print_yellow('Aguardando 100 segundos antes de recomeçar...')
-            time.sleep(100)
+            print_yellow('Aguardando...')
+            time.sleep(time1)
             
     except Exception as e:
         print_red(f"Erro geral: {str(e)}")
