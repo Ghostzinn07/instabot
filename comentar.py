@@ -31,11 +31,11 @@ def main():
                 else:
                     print_yellow(f"Nenhuma postagem encontrada para {username_to_comment}")
 
-                time.sleep(3)
+                time.sleep(5)
 
                 if (index + 1) % 4 == 0:
                     print_yellow('Aguardando...')
-                    time.sleep(30)
+                    time.sleep(100)
                     api = Client(username, password)
 
     except Exception as e:
