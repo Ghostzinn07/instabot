@@ -7,9 +7,9 @@ clear
      else 
          echo "A API do Instagram está atualizada." 
      fi  
-     if ! pip3 show instagram_private_api &> /dev/null; then 
+     if ! pip3 show instaloader &> /dev/null; then 
          echo "Instalando a dependência 'instaloader'..." 
-         pip3 install instagram_private_api 
+         pip3 install instaloader 
      else 
          echo "A biblioteca instaloader está atualizada." 
      fi 
